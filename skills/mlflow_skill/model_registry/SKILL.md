@@ -39,3 +39,43 @@ Use model registry when:
 - Comparing model performance across versions
 - Viewing audit history of model transitions
 - Loading production models for serving
+
+## Python Code Example
+
+```python
+import mlflow
+from mlflow.tracking import MlflowClient
+
+client = MlflowClient()
+
+# Register a new model version
+with mlflow.start_run():
+    # Train and log your model
+    mlflow.sklearn.log_model(model, "model", registered_model_name="MyModel")
+
+# Transition model to different stages
+client.transition_model_version_stage(
+    name="MyModel",
+    version=1,
+    stage="Staging"  # Options: None, Staging, Production, Archived
+)
+
+# Add description and tags
+client.update_model_version(
+    name="MyModel",
+    version=1,
+    description="Random Forest classifier trained on iris dataset"
+)
+
+client.set_model_version_tag("MyModel", "1", "validation_status", "approved")
+
+# Load a specific version or stage
+model_staging = mlflow.pyfunc.load_model("models:/MyModel/Staging")
+model_production = mlflow.pyfunc.load_model("models:/MyModel/Production")
+model_version_2 = mlflow.pyfunc.load_model("models:/MyModel/2")
+
+# Get model version details
+versions = client.search_model_versions("name='MyModel'")
+for v in versions:
+    print(f"Version {v.version}: Stage={v.current_stage}, Run ID={v.run_id}")
+```

@@ -38,3 +38,35 @@ Use model packaging when:
 - Packaging custom models with custom flavors
 - Adding model metadata and signatures
 - Creating reproducible deployment packages
+
+## Python Code Example
+
+```python
+import mlflow
+import mlflow.sklearn
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.datasets import load_iris
+from mlflow.models.signature import infer_signature
+
+# Train a model
+X, y = load_iris(return_X_y=True)
+model = RandomForestClassifier(n_estimators=100)
+model.fit(X, y)
+
+# Create model signature (defines input/output schema)
+predictions = model.predict(X[:5])
+signature = infer_signature(X[:5], predictions)
+
+# Package and save model
+with mlflow.start_run():
+    mlflow.sklearn.log_model(
+        sk_model=model,
+        artifact_path="model",
+        signature=signature,
+        registered_model_name="iris_classifier"
+    )
+
+# Load packaged model later
+run_id = mlflow.active_run().info.run_id
+loaded_model = mlflow.sklearn.load_model(f"runs:/{run_id}/model")
+```

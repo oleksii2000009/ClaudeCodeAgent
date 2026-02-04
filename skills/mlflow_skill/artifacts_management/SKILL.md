@@ -43,3 +43,44 @@ Use artifacts management when:
 - Azure Blob Storage
 - HDFS
 - HTTP-based storage
+
+## Python Code Example
+
+```python
+import mlflow
+import matplotlib.pyplot as plt
+import pandas as pd
+import numpy as np
+
+with mlflow.start_run():
+    # Log a single file
+    with open("config.txt", "w") as f:
+        f.write("batch_size=32\nepochs=100")
+    mlflow.log_artifact("config.txt")
+
+    # Log a plot/figure
+    plt.figure()
+    plt.plot([1, 2, 3], [4, 5, 6])
+    plt.savefig("training_plot.png")
+    mlflow.log_artifact("training_plot.png")
+
+    # Log a DataFrame as CSV
+    df = pd.DataFrame({"accuracy": [0.85, 0.89, 0.92], "loss": [0.45, 0.32, 0.21]})
+    df.to_csv("metrics.csv", index=False)
+    mlflow.log_artifact("metrics.csv")
+
+    # Log an entire directory
+    mlflow.log_artifacts("output_folder/", artifact_path="results")
+
+    # Log a dictionary as JSON
+    config = {"learning_rate": 0.001, "batch_size": 32}
+    mlflow.log_dict(config, "config.json")
+
+    # Log text directly
+    mlflow.log_text("Model training completed successfully", "status.txt")
+
+# Download artifacts later
+run_id = mlflow.active_run().info.run_id
+local_path = mlflow.artifacts.download_artifacts(f"runs:/{run_id}/training_plot.png")
+print(f"Downloaded to: {local_path}")
+```
