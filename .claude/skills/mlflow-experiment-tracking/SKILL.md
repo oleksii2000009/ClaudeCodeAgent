@@ -1,3 +1,8 @@
+---
+name: mlflow-experiment-tracking
+description: Records, manages, and compares multiple ML experiment runs with their parameters, metrics, and artifacts. Use when tracking ML experiments, logging hyperparameters and metrics, comparing model performance, or running hyperparameter tuning workflows.
+---
+
 # Experiment Tracking Skill
 
 ## Skill Overview Table

@@ -1,3 +1,8 @@
+---
+name: mlflow-artifacts
+description: Stores and retrieves plots, data files, and experiment artifacts. Use when saving visualizations like confusion matrices or ROC curves, logging training outputs, storing data files, or managing any experiment-related files and reports.
+---
+
 # Artifacts Management Skill
 
 ## Skill Overview Table

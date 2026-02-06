@@ -19,30 +19,44 @@ All skills have been structured following a consistent format with:
 ```
 work/
 ├── README.md                           # This file - detailed overview and skill reference
-└── skills/
-    └── mlflow_skill/
-        ├── README.md                   # Brief description of MLflow
-        ├── experiment_tracking/
-        │   └── SKILL.md                # Experiment tracking skill documentation
-        ├── parameter_and_metrics_logging/
-        │   └── SKILL.md                # Parameter and metrics logging documentation
-        ├── model_packaging/
-        │   └── SKILL.md                # Model packaging skill documentation
-        ├── model_registry/
-        │   └── SKILL.md                # Model registry skill documentation
-        └── artifacts_management/
-            └── SKILL.md                # Artifacts management skill documentation
+├── CLAUDE.md                           # Project instructions for Claude
+├── .claude/
+│   └── skills/
+│       ├── mlflow-experiment-tracking/
+│       │   └── SKILL.md                # Experiment tracking skill documentation
+│       ├── mlflow-parameters-metrics/
+│       │   └── SKILL.md                # Parameter and metrics logging documentation
+│       ├── mlflow-model-packaging/
+│       │   └── SKILL.md                # Model packaging skill documentation
+│       ├── mlflow-model-registry/
+│       │   └── SKILL.md                # Model registry skill documentation
+│       └── mlflow-artifacts/
+│           └── SKILL.md                # Artifacts management skill documentation
+└── tests/
+    ├── test1/                          # Asthma prediction pipeline
+    │   ├── asthma_prediction_pipeline.py
+    │   └── synthetic_asthma_dataset.csv
+    ├── test2/                          # Historical popularity ML
+    │   ├── historical_popularity_ml.py
+    │   └── database.csv
+    ├── test3/                          # Parkinson's disease prediction
+    │   ├── parkinsons_prediction.py
+    │   ├── parkinsons_prediction_enhanced.py
+    │   └── Parkinsons-Telemonitoring-ucirvine.csv
+    └── test4/                          # Penguin classifier
+        ├── penguin_classifier.py
+        └── penguins_size.csv
 ```
 
 ## Skills Reference Table
 
 | Skill Name | Description | Documentation |
 |------------|-------------|---------------|
-| **Experiment Tracking** | Records, manages, and compares multiple ML experiment runs with their parameters, metrics, and artifacts | [SKILL.md](skills/mlflow_skill/experiment_tracking/SKILL.md) |
-| **Parameter and Metrics Logging** | Logs hyperparameters and performance metrics during model training for tracking and comparison | [SKILL.md](skills/mlflow_skill/parameter_and_metrics_logging/SKILL.md) |
-| **Model Packaging** | Packages trained ML models in a standardized MLflow format for portability and deployment | [SKILL.md](skills/mlflow_skill/model_packaging/SKILL.md) |
-| **Model Registry** | Central repository for managing model versions, lifecycle stages, and production deployments | [SKILL.md](skills/mlflow_skill/model_registry/SKILL.md) |
-| **Artifacts Management** | Stores and retrieves training outputs like models, plots, data files, and other experiment artifacts | [SKILL.md](skills/mlflow_skill/artifacts_management/SKILL.md) |
+| **Experiment Tracking** | Records, manages, and compares multiple ML experiment runs with their parameters, metrics, and artifacts | [SKILL.md](.claude/skills/mlflow-experiment-tracking/SKILL.md) |
+| **Parameter and Metrics Logging** | Logs hyperparameters and performance metrics during model training for tracking and comparison | [SKILL.md](.claude/skills/mlflow-parameters-metrics/SKILL.md) |
+| **Model Packaging** | Packages trained ML models in a standardized MLflow format for portability and deployment | [SKILL.md](.claude/skills/mlflow-model-packaging/SKILL.md) |
+| **Model Registry** | Central repository for managing model versions, lifecycle stages, and production deployments | [SKILL.md](.claude/skills/mlflow-model-registry/SKILL.md) |
+| **Artifacts Management** | Stores and retrieves training outputs like models, plots, data files, and other experiment artifacts | [SKILL.md](.claude/skills/mlflow-artifacts/SKILL.md) |
 
 ## Quick Start
 

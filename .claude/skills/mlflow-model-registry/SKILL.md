@@ -1,3 +1,8 @@
+---
+name: mlflow-model-registry
+description: Manages model versions, lifecycle stages, and production deployments. Use when registering models, promoting models through stages (Staging/Production), managing model versions, or tracking production model deployments.
+---
+
 # Model Registry Skill
 
 ## Skill Overview Table

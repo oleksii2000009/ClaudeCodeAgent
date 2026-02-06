@@ -1,3 +1,8 @@
+---
+name: mlflow-model-packaging
+description: Packages ML models in MLflow format for deployment. Use when preparing models for production deployment, creating portable model artifacts, adding model signatures, or packaging models with dependencies.
+---
+
 # Model Packaging Skill
 
 ## Skill Overview Table

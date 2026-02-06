@@ -1,0 +1,11 @@
+{
+  "hooks": {
+    "conversationStart": [
+      {
+        "command": "echo 'Loading project README...'",
+        "description": "Read README.md at conversation start"
+      }
+    ]
+  },
+  "conversationStartMessage": "Please read the README.md file to understand the project context. IMPORTANT: Always check available skills before writing custom code. When working with MLflow, use the mlflow-* skills. List which skills you're using and why."
+}

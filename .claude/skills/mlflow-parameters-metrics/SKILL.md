@@ -1,3 +1,8 @@
+---
+name: mlflow-parameters-metrics
+description: Logs hyperparameters and performance metrics for ML runs. Use when recording model hyperparameters, logging training metrics like accuracy or loss, tracking model performance, or documenting experiment configurations.
+---
+
 # Parameter and Metrics Logging Skill
 
 ## Skill Overview Table
