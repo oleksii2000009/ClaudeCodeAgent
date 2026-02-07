@@ -58,14 +58,6 @@ work/
 | **Model Registry** | Central repository for managing model versions, lifecycle stages, and production deployments | [SKILL.md](.claude/skills/mlflow-model-registry/SKILL.md) |
 | **Artifacts Management** | Stores and retrieves training outputs like models, plots, data files, and other experiment artifacts | [SKILL.md](.claude/skills/mlflow-artifacts/SKILL.md) |
 
-## Quick Start
-
-Each skill includes a Python code example showing the essential usage pattern. To get started:
-
-1. Choose the skill relevant to your current task from the table above
-2. Review the "When to Use This Skill" section to confirm it matches your needs
-3. Follow the Python code example to implement the functionality
-4. Refer to the "Key Concepts" section for deeper understanding
 
 ## Skill Categories
 
