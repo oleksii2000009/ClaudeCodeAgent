@@ -1,129 +1,70 @@
-# MLflow Skills - Project Overview
+# MLflow Skills for Claude Code
 
-## Overview
+A Claude Code skill that provides comprehensive MLflow guidance for machine learning experiment tracking, model management, and deployment.
 
-This project contains a collection of MLflow skills designed to help data scientists and ML engineers efficiently manage their machine learning workflows. Each skill focuses on a specific aspect of MLflow functionality, providing:
+## What This Project Does
 
-- **Clear documentation** of when and how to use each skill
-- **Concise Python code examples** demonstrating core functionality
-- **Practical guidance** for real-world ML operations
+This project contains a custom skill for Claude Code that teaches Claude how to help you with MLflow. When you invoke the skill, Claude gains access to detailed documentation about MLflow's capabilities and can write proper MLflow code for your ML projects.
 
-All skills have been structured following a consistent format with:
-- Skill overview and description
-- Use cases and scenarios
-- Key concepts and terminology
-- Python code examples with best practices
-
-## Folder Structure
+## Project Structure
 
 ```
 work/
-├── README.md                           # This file - detailed overview and skill reference
-├── CLAUDE.md                           # Project instructions for Claude
-├── .claude/
-│   └── skills/
-│       ├── mlflow-experiment-tracking/
-│       │   └── SKILL.md                # Experiment tracking skill documentation
-│       ├── mlflow-parameters-metrics/
-│       │   └── SKILL.md                # Parameter and metrics logging documentation
-│       ├── mlflow-model-packaging/
-│       │   └── SKILL.md                # Model packaging skill documentation
-│       ├── mlflow-model-registry/
-│       │   └── SKILL.md                # Model registry skill documentation
-│       └── mlflow-artifacts/
-│           └── SKILL.md                # Artifacts management skill documentation
-└── tests/
-    ├── test1/                          # Asthma prediction pipeline
-    │   ├── asthma_prediction_pipeline.py
-    │   └── synthetic_asthma_dataset.csv
-    ├── test2/                          # Historical popularity ML
-    │   ├── historical_popularity_ml.py
-    │   └── database.csv
-    ├── test3/                          # Parkinson's disease prediction
-    │   ├── parkinsons_prediction.py
-    │   ├── parkinsons_prediction_enhanced.py
-    │   └── Parkinsons-Telemonitoring-ucirvine.csv
-    └── test4/                          # Penguin classifier
-        ├── penguin_classifier.py
-        └── penguins_size.csv
+├── README.md                          # This file
+├── CLAUDE.md                          # Instructions for Claude
+└── .claude/skills/mlflow/             # MLflow skill
+    ├── SKILL.md                       # Skill overview and quick start
+    ├── experiment-tracking.md         # Creating experiments and runs
+    ├── parameters-metrics.md          # Logging params and metrics
+    ├── artifacts.md                   # Saving files and plots
+    ├── model-packaging.md             # Packaging models for deployment
+    ├── model-registry.md              # Version control and staging
+    ├── autologging.md                 # Automatic logging setup
+    ├── reference.md                   # API reference summary
+    └── examples.md                    # Code snippets for common tasks
 ```
 
-## Skills Reference Table
+## MLflow Capabilities
 
-| Skill Name | Description | Documentation |
-|------------|-------------|---------------|
-| **Experiment Tracking** | Records, manages, and compares multiple ML experiment runs with their parameters, metrics, and artifacts | [SKILL.md](.claude/skills/mlflow-experiment-tracking/SKILL.md) |
-| **Parameter and Metrics Logging** | Logs hyperparameters and performance metrics during model training for tracking and comparison | [SKILL.md](.claude/skills/mlflow-parameters-metrics/SKILL.md) |
-| **Model Packaging** | Packages trained ML models in a standardized MLflow format for portability and deployment | [SKILL.md](.claude/skills/mlflow-model-packaging/SKILL.md) |
-| **Model Registry** | Central repository for managing model versions, lifecycle stages, and production deployments | [SKILL.md](.claude/skills/mlflow-model-registry/SKILL.md) |
-| **Artifacts Management** | Stores and retrieves training outputs like models, plots, data files, and other experiment artifacts | [SKILL.md](.claude/skills/mlflow-artifacts/SKILL.md) |
-
-
-## Skill Categories
-
-### Tracking & Logging
-- **Experiment Tracking**: Organize and compare multiple training runs
-- **Parameter and Metrics Logging**: Record configuration and performance data
-
-### Model Management
-- **Model Packaging**: Prepare models for deployment
-- **Model Registry**: Manage model lifecycle and versions
-
-### Data & Artifacts
-- **Artifacts Management**: Store and retrieve experiment outputs
+| Capability | Description |
+|------------|-------------|
+| **Experiment Tracking** | Organize ML experiments into projects with runs |
+| **Parameters & Metrics** | Record model settings and evaluation results |
+| **Artifacts** | Save files (plots, data, reports) |
+| **Model Packaging** | Save trained models for reuse and deployment |
+| **Model Registry** | Manage model versions and production stages |
+| **Autologging** | Automatically log everything with one line |
 
 ## Prerequisites
 
-To use these skills, you need:
-- Python 3.8 or higher
-- MLflow installed (`pip install mlflow`)
-- scikit-learn (for examples): `pip install scikit-learn`
-- Additional dependencies based on your specific use case (PyTorch, TensorFlow, etc.)
-
-## Installation
-
 ```bash
-# Install MLflow
 pip install mlflow
-
-# Install common dependencies
-pip install scikit-learn numpy pandas matplotlib
-
-# Optional: For deep learning examples
-pip install torch tensorflow
 ```
 
-## Running MLflow UI
+## How to Use
 
-To visualize your experiments, start the MLflow UI:
+Simply ask Claude to help with MLflow tasks:
+
+```
+"Help me track my model training with MLflow"
+"Log parameters and metrics for this experiment"
+"Save my confusion matrix as an artifact"
+"Register my model to production"
+```
+
+Or invoke the skill directly with `/mlflow`.
+
+## Viewing Results
+
+After logging experiments, view them in the MLflow UI:
 
 ```bash
 mlflow ui
 ```
 
-Then open your browser to `http://localhost:5000`
-
-## Contributing
-
-Each skill follows a consistent documentation structure:
-1. Skill Overview Table
-2. Overview description
-3. When to Use This Skill
-4. Key Concepts
-5. Common Operations/Workflows
-6. Python Code Example
-
-When adding new skills, please follow this format for consistency.
-
-## Next Steps
-
-- Explore each skill's detailed documentation
-- Try the code examples with your own datasets
-- Combine multiple skills in your ML workflows
-- Set up MLflow tracking server for team collaboration
+Open http://localhost:5000 in your browser.
 
 ## Resources
 
 - [MLflow Official Documentation](https://mlflow.org/docs/latest/index.html)
 - [MLflow GitHub Repository](https://github.com/mlflow/mlflow)
-- [MLflow Tutorials](https://mlflow.org/docs/latest/tutorials-and-examples/index.html)

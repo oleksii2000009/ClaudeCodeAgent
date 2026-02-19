@@ -1,40 +1,53 @@
 # Project Guidelines for Claude
 
-## MLflow Skills Usage
+## MLflow Skill Usage
 
-When working on machine learning tasks that involve MLflow, **always use the available MLflow skills** before writing custom code. These skills provide standardized patterns and best practices.
+When working on machine learning tasks that involve MLflow, **always use the `mlflow` skill** before writing custom code. This skill provides standardized patterns and best practices for beginners and experts alike.
 
-### Available Skills
+### Available Tools
 
-| Skill | When to Use |
-|-------|-------------|
-| `mlflow-experiment-tracking` | Tracking ML experiments, comparing runs, hyperparameter tuning |
-| `mlflow-parameters-metrics` | Logging hyperparameters and performance metrics (accuracy, F1, loss, etc.) |
-| `mlflow-artifacts` | Saving visualizations (confusion matrices, ROC curves), data files, reports |
-| `mlflow-model-packaging` | Packaging models for deployment with signatures and dependencies |
-| `mlflow-model-registry` | Registering models, managing versions, promoting to staging/production |
+The `mlflow` skill contains 6 tools, each with detailed step-by-step explanations:
+
+| Tool | What It Does | When to Use |
+|------|--------------|-------------|
+| **Experiment Tracking** | Organizes experiments into projects | Starting a new ML project, comparing different approaches |
+| **Parameters & Metrics** | Records settings and results | Every time you train a model |
+| **Artifacts** | Saves files (plots, data, reports) | When you create visualizations or output files |
+| **Model Packaging** | Prepares models for sharing/deployment | When your model is ready to use elsewhere |
+| **Model Registry** | Manages model versions in production | When deploying models to production |
+| **Autologging** | Automatically logs everything | Quick experiments, comparing many models with minimal code |
 
 ### Workflow
 
-1. **Before writing MLflow code**, invoke the relevant skill to get the recommended patterns
-2. **Use skill examples** as templates for the specific task
-3. **Combine multiple skills** when the task spans different MLflow features (e.g., experiment tracking + artifacts + model registry)
+1. **Before writing MLflow code**, invoke the `mlflow` skill
+2. **Read the relevant tool documentation** - each tool has beginner-friendly explanations with analogies and examples
+3. **Use the code examples** as templates for your specific task
+4. **Combine multiple tools** when needed (e.g., experiment tracking + artifacts + model registry)
 
 ### Example Mapping
 
-| Task | Skills to Use |
-|------|---------------|
-| Train and compare models | `mlflow-experiment-tracking`, `mlflow-parameters-metrics` |
-| Save confusion matrix/ROC curve | `mlflow-artifacts` |
-| Register best model | `mlflow-model-registry` |
-| Package model for deployment | `mlflow-model-packaging` |
-| Full ML pipeline | All relevant skills |
+| Task | Tools to Use |
+|------|--------------|
+| Train and compare models | Experiment Tracking, Parameters & Metrics |
+| Quick prototyping | Autologging |
+| Save confusion matrix/ROC curve | Artifacts |
+| Register best model | Model Registry |
+| Package model for deployment | Model Packaging |
+| Full ML pipeline | All tools |
 
 ## Project Structure
 
 ```
-tests/           # Test datasets and ML experiments
-.claude/skills/  # MLflow skill definitions
+tests/                    # Test datasets and ML experiments
+.claude/skills/mlflow/    # MLflow skill with tool documentation
+├── SKILL.md              # Main skill overview
+└── tools/                # Individual tool guides
+    ├── experiment-tracking.md
+    ├── parameters-metrics.md
+    ├── artifacts.md
+    ├── model-packaging.md
+    ├── model-registry.md
+    └── autologging.md
 ```
 
 ## General Preferences
